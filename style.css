@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #fd0d0d;
+    --font-base: 1rem;
+
+    --bs-primary: var(--primary-color);
+    --bs-primary-rgb: 253, 13, 13;
+}
+
+body {
+    font-size: var(--font-base);
+    scroll-behavior: smooth;
+    padding-top: 3.5rem;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-bg: #d10a0a;
+    --bs-btn-hover-border-color: #d10a0a;
+    --bs-btn-active-bg: #b00808;
+    --bs-btn-active-border-color: #b00808;
+}
+
+section[id] {
+    scroll-margin-top: 4rem;
+}
+
+.hero-container {
+    height: 70vh;
+    background:
+        linear-gradient(rgba(255, 0, 0, 0.7), rgba(0, 0, 0, 0.815)),
+        url("img/dangerous.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-grid-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+    .custom-grid-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 62rem) {
+    .custom-grid-gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .hero-container {
+        height: 85vh;
+    }
+}
+
+.custom-grid-gallery .card {
+    transition: transform 0.3s ease;
+}
+
+.custom-grid-gallery .card:hover {
+    transform: translateY(-0.5rem);
+    background-color: #ffffff;
+}
+
+.custom-card-img {
+    height: 12.5rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.timeline {
+    list-style: none;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 0 0 0 1.5rem;
+    border-left: 0.25rem solid var(--primary-color);
+}
+
+.timeline li {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -2.1rem;
+    top: 0.3rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 0.2rem solid #ffffff;
+}
+
+.timeline-year {
+    display: block;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.timeline li p {
+    margin: 0.25rem 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        scroll-behavior: auto;
+    }
+
+    .custom-grid-gallery .card {
+        transition: none;
+    }
+}
